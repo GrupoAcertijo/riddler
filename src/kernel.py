@@ -11,6 +11,7 @@ class Kernel():
         self.pid = 0
         self.resourcesManager.cpu.kernel = self
         self.irq.kernel = self
+        self.shell.kernel = self
 
     def loadProgram(self, aProgram):
         #Loads a program, return baseDir of that program in the memory
