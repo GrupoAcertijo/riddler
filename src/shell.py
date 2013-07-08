@@ -18,6 +18,8 @@ class Shell():
                               'changeCurrentUserPW': self.changeCurrentUserPWShell,
                               'changeUserPW': self.changeUserPW}
 
+        self.programs = {}
+
         ##Set up for logging
         logging.basicConfig(level=logging.DEBUG, format='%(message)s')
 
@@ -188,6 +190,9 @@ class Shell():
         if command in self.validCommands.keys():
             r = self.validCommands.get(command)
             r()
+        elif command in self.programs.keys():
+            p = self.programs.get(command)
+            self.loadProgram(p)
         elif command == '':
             return
         else: print(str(command) + " is not a valid command! Type 'help' for view valid commands.")
@@ -203,6 +208,9 @@ class Shell():
 
     def setKernel(self, kernel):
         self.kernel = kernel
+
+    def addProgram(self, aProgram):
+        self.programs.update({str(aProgram):aProgram})
 
     def loadProgram(self, aProgram):
         self.kernel.loadProgram(aProgram)

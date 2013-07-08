@@ -10,7 +10,7 @@ class CPU():
         if not self.kernel.isKernelMode():
             if self.currentProcess == None:
                 self.irq.contextSwitch()
-            if self.currentProcess.hasNextInstruction(self.currentProcess.size):
+            elif self.currentProcess.hasNextInstruction(self.currentProcess.size):
                 currentProcessPC = self.currentProcess.getPc()
                 instructionToExec = self.kernel.resourcesManager.getNextInstruction(self.currentProcess)
                 if not instructionToExec == None:
@@ -18,6 +18,8 @@ class CPU():
                     self.currentProcess.incPc()
             else:
                 self.irq.contextSwitch()
+        else:
+            self.kernel.shell.run()
 
     def setCurrentProcess(self, aProcess):
         self.currentProcess = aProcess

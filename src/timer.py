@@ -9,9 +9,9 @@ class Timer():
     def clock(self):
         if self.cpu.canExecute():
             if self.acc < self.quantum:
-                self.acc += 1
                 self.cpu.execute()
                 self.io.execute()
+                self.acc += 1
             else:
                 self.cpu.irq.contextSwitch()
                 self.acc = 0
