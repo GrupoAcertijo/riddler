@@ -46,15 +46,15 @@ exit()
         <void method="set">
          <object idref="Point2D$Double0">
           <void method="setLocation">
-           <double>15.238918669764658</double>
-           <double>18.415206788063614</double>
+           <double>79.23891866976466</double>
+           <double>29.415206788063614</double>
           </void>
          </object>
-         <double>18.415206788063614</double>
+         <double>29.415206788063614</double>
         </void>
        </void>
       </object>
-      <double>15.238918669764658</double>
+      <double>79.23891866976466</double>
      </void>
     </void>
    </object>
@@ -63,10 +63,8 @@ exit()
    <object class="com.horstmann.violet.ClassNode" id="ClassNode1">
     <void property="methods">
      <void property="text">
-      <string>loadProgram(aProgram, anID)
-getInstruction(anID, aPC):Instruction
-existsID(anID):Bool
-getProgramSize(anID):Int</string>
+      <string>loadProgram(aProgram)
+</string>
      </void>
     </void>
     <void property="name">
@@ -85,15 +83,15 @@ getProgramSize(anID):Int</string>
         <void method="set">
          <object idref="Point2D$Double1">
           <void method="setLocation">
-           <double>910.1840098780303</double>
-           <double>294.1757719471029</double>
+           <double>921.1840098780303</double>
+           <double>293.1757719471029</double>
           </void>
          </object>
-         <double>294.1757719471029</double>
+         <double>293.1757719471029</double>
         </void>
        </void>
       </object>
-      <double>910.1840098780303</double>
+      <double>921.1840098780303</double>
      </void>
     </void>
    </object>
@@ -108,7 +106,7 @@ getProgramSize(anID):Int</string>
     <void property="methods">
      <void property="text">
       <string>getProcess()
-addProcess()</string>
+addProcess(aPCB)</string>
      </void>
     </void>
     <void property="name">
@@ -127,21 +125,26 @@ addProcess()</string>
         <void method="set">
          <object idref="Point2D$Double2">
           <void method="setLocation">
-           <double>246.8888730758957</double>
-           <double>462.1695215395493</double>
+           <double>283.88887307589573</double>
+           <double>535.1695215395494</double>
           </void>
          </object>
-         <double>462.1695215395493</double>
+         <double>535.1695215395494</double>
         </void>
        </void>
       </object>
-      <double>246.8888730758957</double>
+      <double>283.88887307589573</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode3">
+    <void property="methods">
+     <void property="text">
+      <string>addProcess(aPCB)</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>Priority</string>
@@ -158,15 +161,15 @@ addProcess()</string>
         <void method="set">
          <object idref="Point2D$Double3">
           <void method="setLocation">
-           <double>297.9068976126905</double>
-           <double>630.8209348581124</double>
+           <double>278.9068976126905</double>
+           <double>658.8209348581124</double>
           </void>
          </object>
-         <double>630.8209348581124</double>
+         <double>658.8209348581124</double>
         </void>
        </void>
       </object>
-      <double>297.9068976126905</double>
+      <double>278.9068976126905</double>
      </void>
     </void>
    </object>
@@ -189,15 +192,15 @@ addProcess()</string>
         <void method="set">
          <object idref="Point2D$Double4">
           <void method="setLocation">
-           <double>168.98432750540073</double>
-           <double>633.5959284107421</double>
+           <double>170.98432750540073</double>
+           <double>660.5959284107421</double>
           </void>
          </object>
-         <double>633.5959284107421</double>
+         <double>660.5959284107421</double>
         </void>
        </void>
       </object>
-      <double>168.98432750540073</double>
+      <double>170.98432750540073</double>
      </void>
     </void>
    </object>
@@ -211,7 +214,11 @@ addProcess()</string>
     </void>
     <void property="methods">
      <void property="text">
-      <string>execute()</string>
+      <string>execute()
+setCurrentProcess(aPCB)
+getCurrentProcess()
+setKernel(aKernel)
+canExecute()</string>
      </void>
     </void>
     <void property="name">
@@ -230,21 +237,35 @@ addProcess()</string>
         <void method="set">
          <object idref="Point2D$Double5">
           <void method="setLocation">
-           <double>906.9682914899618</double>
-           <double>117.14885089199865</double>
+           <double>922.9682914899618</double>
+           <double>147.14885089199865</double>
           </void>
          </object>
-         <double>117.14885089199865</double>
+         <double>147.14885089199865</double>
         </void>
        </void>
       </object>
-      <double>906.9682914899618</double>
+      <double>922.9682914899618</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode6">
+    <void property="attributes">
+     <void property="text">
+      <string>kernelMode
+pid</string>
+     </void>
+    </void>
+    <void property="methods">
+     <void property="text">
+      <string>loadProgram(aProgram)
+changeKernelMode()
+setKernelMode(aBoolean)
+isKernelMode()</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>Kernel</string>
@@ -261,15 +282,15 @@ addProcess()</string>
         <void method="set">
          <object idref="Point2D$Double6">
           <void method="setLocation">
-           <double>568.7820103534164</double>
-           <double>470.0114684833167</double>
+           <double>557.7820103534164</double>
+           <double>438.0114684833167</double>
           </void>
          </object>
-         <double>470.0114684833167</double>
+         <double>438.0114684833167</double>
         </void>
        </void>
       </object>
-      <double>568.7820103534164</double>
+      <double>557.7820103534164</double>
      </void>
     </void>
    </object>
@@ -297,15 +318,15 @@ addProcess()</string>
         <void method="set">
          <object idref="Point2D$Double7">
           <void method="setLocation">
-           <double>424.38249938663444</double>
-           <double>630.1533393025859</double>
+           <double>429.38249938663444</double>
+           <double>659.1533393025859</double>
           </void>
          </object>
-         <double>630.1533393025859</double>
+         <double>659.1533393025859</double>
         </void>
        </void>
       </object>
-      <double>424.38249938663444</double>
+      <double>429.38249938663444</double>
      </void>
     </void>
    </object>
@@ -333,15 +354,15 @@ addProcess()</string>
         <void method="set">
          <object idref="Point2D$Double8">
           <void method="setLocation">
-           <double>1245.3985906792468</double>
-           <double>119.21196530835505</double>
+           <double>1310.3985906792468</double>
+           <double>183.21196530835505</double>
           </void>
          </object>
-         <double>119.21196530835505</double>
+         <double>183.21196530835505</double>
         </void>
        </void>
       </object>
-      <double>1245.3985906792468</double>
+      <double>1310.3985906792468</double>
      </void>
     </void>
    </object>
@@ -375,15 +396,15 @@ acc</string>
         <void method="set">
          <object idref="Point2D$Double9">
           <void method="setLocation">
-           <double>1080.2642321030203</double>
-           <double>116.0692988317544</double>
+           <double>1150.2642321030203</double>
+           <double>165.0692988317544</double>
           </void>
          </object>
-         <double>116.0692988317544</double>
+         <double>165.0692988317544</double>
         </void>
        </void>
       </object>
-      <double>1080.2642321030203</double>
+      <double>1150.2642321030203</double>
      </void>
     </void>
    </object>
@@ -418,15 +439,15 @@ isAdmin : Bool</string>
         <void method="set">
          <object idref="Point2D$Double10">
           <void method="setLocation">
-           <double>14.3988221794218</double>
-           <double>318.09539976874936</double>
+           <double>77.39882217942181</double>
+           <double>367.09539976874936</double>
           </void>
          </object>
-         <double>318.09539976874936</double>
+         <double>367.09539976874936</double>
         </void>
        </void>
       </object>
-      <double>14.3988221794218</double>
+      <double>77.39882217942181</double>
      </void>
     </void>
    </object>
@@ -455,15 +476,15 @@ hasNextInstruction()</string>
         <void method="set">
          <object idref="Point2D$Double11">
           <void method="setLocation">
-           <double>1348.4988892790298</double>
-           <double>209.02327840473785</double>
+           <double>1414.4988892790298</double>
+           <double>26.02327840473788</double>
           </void>
          </object>
-         <double>209.02327840473785</double>
+         <double>26.02327840473788</double>
         </void>
        </void>
       </object>
-      <double>1348.4988892790298</double>
+      <double>1414.4988892790298</double>
      </void>
     </void>
    </object>
@@ -491,15 +512,15 @@ hasNextInstruction()</string>
         <void method="set">
          <object idref="Point2D$Double12">
           <void method="setLocation">
-           <double>1594.2797128156867</double>
-           <double>216.96346768853596</double>
+           <double>1647.2797128156867</double>
+           <double>43.96346768853596</double>
           </void>
          </object>
-         <double>216.96346768853596</double>
+         <double>43.96346768853596</double>
         </void>
        </void>
       </object>
-      <double>1594.2797128156867</double>
+      <double>1647.2797128156867</double>
      </void>
     </void>
    </object>
@@ -527,15 +548,15 @@ hasNextInstruction()</string>
         <void method="set">
          <object idref="Point2D$Double13">
           <void method="setLocation">
-           <double>1502.3558312614368</double>
-           <double>345.65690186448865</double>
+           <double>1592.3558312614368</double>
+           <double>140.65690186448865</double>
           </void>
          </object>
-         <double>345.65690186448865</double>
+         <double>140.65690186448865</double>
         </void>
        </void>
       </object>
-      <double>1502.3558312614368</double>
+      <double>1592.3558312614368</double>
      </void>
     </void>
    </object>
@@ -563,15 +584,15 @@ hasNextInstruction()</string>
         <void method="set">
          <object idref="Point2D$Double14">
           <void method="setLocation">
-           <double>1674.444756178305</double>
-           <double>352.37587606070156</double>
+           <double>1707.444756178305</double>
+           <double>138.37587606070156</double>
           </void>
          </object>
-         <double>352.37587606070156</double>
+         <double>138.37587606070156</double>
         </void>
        </void>
       </object>
-      <double>1674.444756178305</double>
+      <double>1707.444756178305</double>
      </void>
     </void>
    </object>
@@ -581,15 +602,19 @@ hasNextInstruction()</string>
     <void property="attributes">
      <void property="text">
       <string>pid
-pc</string>
+pc
+base
+size</string>
      </void>
     </void>
     <void property="methods">
      <void property="text">
       <string>getPc()
-setPc(aNumber)
 incPc()
-getID()</string>
+getSize()
+getBase()
+getID()
+hasNextInstruction()</string>
      </void>
     </void>
     <void property="name">
@@ -608,15 +633,15 @@ getID()</string>
         <void method="set">
          <object idref="Point2D$Double15">
           <void method="setLocation">
-           <double>7.670625916062633</double>
-           <double>443.62584192787546</double>
+           <double>8.670625916062633</double>
+           <double>484.62584192787546</double>
           </void>
          </object>
-         <double>443.62584192787546</double>
+         <double>484.62584192787546</double>
         </void>
        </void>
       </object>
-      <double>7.670625916062633</double>
+      <double>8.670625916062633</double>
      </void>
     </void>
    </object>
@@ -626,6 +651,12 @@ getID()</string>
     <void property="attributes">
      <void property="text">
       <string>priority</string>
+     </void>
+    </void>
+    <void property="methods">
+     <void property="text">
+      <string>getPriority()
+setPriority(aPriority)</string>
      </void>
     </void>
     <void property="name">
@@ -644,21 +675,30 @@ getID()</string>
         <void method="set">
          <object idref="Point2D$Double16">
           <void method="setLocation">
-           <double>14.226717207351712</double>
-           <double>610.66387385712</double>
+           <double>9.226717207351712</double>
+           <double>690.66387385712</double>
           </void>
          </object>
-         <double>610.66387385712</double>
+         <double>690.66387385712</double>
         </void>
        </void>
       </object>
-      <double>14.226717207351712</double>
+      <double>9.226717207351712</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode17">
+    <void property="methods">
+     <void property="text">
+      <string>setKernel(aKernel)
+setHandler(aHandler)
+contextSwitch()
+contextSwitchIO()
+timeout()</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>IRQ</string>
@@ -675,25 +715,36 @@ getID()</string>
         <void method="set">
          <object idref="Point2D$Double17">
           <void method="setLocation">
-           <double>684.9618315551194</double>
-           <double>640.5611142239682</double>
+           <double>652.9618315551194</double>
+           <double>689.5611142239682</double>
           </void>
          </object>
-         <double>640.5611142239682</double>
+         <double>689.5611142239682</double>
         </void>
        </void>
       </object>
-      <double>684.9618315551194</double>
+      <double>652.9618315551194</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode18">
+    <void property="attributes">
+     <void property="text">
+      <string>fillBlocks</string>
+     </void>
+    </void>
     <void property="methods">
      <void property="text">
       <string>compact()
-loadProgram(aMemory, aProgram, anID)</string>
+getFreeBlocks()
+getFillBlocks()
+loadProgram(aMemory, aProgram, anID)
+getFreeSize()
+getAmountFreeBlocks()
+getAmountFillBlocks()
+</string>
      </void>
     </void>
     <void property="name">
@@ -712,15 +763,15 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double18">
           <void method="setLocation">
-           <double>1268.24209563339</double>
-           <double>608.1691136913704</double>
+           <double>1131.24209563339</double>
+           <double>437.1691136913704</double>
           </void>
          </object>
-         <double>608.1691136913704</double>
+         <double>437.1691136913704</double>
         </void>
        </void>
       </object>
-      <double>1268.24209563339</double>
+      <double>1131.24209563339</double>
      </void>
     </void>
    </object>
@@ -743,21 +794,35 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double19">
           <void method="setLocation">
-           <double>994.8297557412739</double>
-           <double>606.4696866211142</double>
+           <double>897.8297557412739</double>
+           <double>500.4696866211142</double>
           </void>
          </object>
-         <double>606.4696866211142</double>
+         <double>500.4696866211142</double>
         </void>
        </void>
       </object>
-      <double>994.8297557412739</double>
+      <double>897.8297557412739</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode20">
+    <void property="attributes">
+     <void property="text">
+      <string>readyQueue
+currentPCB</string>
+     </void>
+    </void>
+    <void property="methods">
+     <void property="text">
+      <string>addPCB(aPCB)
+execute()
+reset()
+setResourcesManager(aResourcesManager)</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>IO</string>
@@ -774,15 +839,15 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double20">
           <void method="setLocation">
-           <double>919.230822910876</double>
-           <double>36.11158224107626</double>
+           <double>866.230822910876</double>
+           <double>5.111582241076263</double>
           </void>
          </object>
-         <double>36.11158224107626</double>
+         <double>5.111582241076263</double>
         </void>
        </void>
       </object>
-      <double>919.230822910876</double>
+      <double>866.230822910876</double>
      </void>
     </void>
    </object>
@@ -805,21 +870,29 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double21">
           <void method="setLocation">
-           <double>1086.5187754703443</double>
-           <double>40.54802013887192</double>
+           <double>1217.5187754703443</double>
+           <double>41.54802013887192</double>
           </void>
          </object>
-         <double>40.54802013887192</double>
+         <double>41.54802013887192</double>
         </void>
        </void>
       </object>
-      <double>1086.5187754703443</double>
+      <double>1217.5187754703443</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode22">
+    <void property="methods">
+     <void property="text">
+      <string>getNextInstruction(aPCB)
+getIOInstruction(aPCB)
+loadPorgram(aProgram)
+</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>ResourcesManager</string>
@@ -836,21 +909,26 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double22">
           <void method="setLocation">
-           <double>539.5275735641696</double>
-           <double>44.39929750915511</double>
+           <double>438.52757356416964</double>
+           <double>24.39929750915511</double>
           </void>
          </object>
-         <double>44.39929750915511</double>
+         <double>24.39929750915511</double>
         </void>
        </void>
       </object>
-      <double>539.5275735641696</double>
+      <double>438.52757356416964</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode23">
+    <void property="methods">
+     <void property="text">
+      <string>loadProgram(aProgram, aMemory, anAsignation)</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>AsignationFit</string>
@@ -867,21 +945,26 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double23">
           <void method="setLocation">
-           <double>1629.4803244918267</double>
-           <double>614.3858542611589</double>
+           <double>1617.4803244918267</double>
+           <double>497.3858542611589</double>
           </void>
          </object>
-         <double>614.3858542611589</double>
+         <double>497.3858542611589</double>
         </void>
        </void>
       </object>
-      <double>1629.4803244918267</double>
+      <double>1617.4803244918267</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode24">
+    <void property="methods">
+     <void property="text">
+      <string>loadProgram(aProgram, aMemory, anAsignation)</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>FirstFit</string>
@@ -898,21 +981,26 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double24">
           <void method="setLocation">
-           <double>1485.1338844387014</double>
-           <double>753.5896278376823</double>
+           <double>1283.1338844387014</double>
+           <double>640.5896278376823</double>
           </void>
          </object>
-         <double>753.5896278376823</double>
+         <double>640.5896278376823</double>
         </void>
        </void>
       </object>
-      <double>1485.1338844387014</double>
+      <double>1283.1338844387014</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode25">
+    <void property="methods">
+     <void property="text">
+      <string>loadProgram(aProgram, aMemory, anAsignation)</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>WorstFit</string>
@@ -929,21 +1017,26 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double25">
           <void method="setLocation">
-           <double>1728.0260497108857</double>
-           <double>751.5003949331982</double>
+           <double>1954.0260497108857</double>
+           <double>643.5003949331982</double>
           </void>
          </object>
-         <double>751.5003949331982</double>
+         <double>643.5003949331982</double>
         </void>
        </void>
       </object>
-      <double>1728.0260497108857</double>
+      <double>1954.0260497108857</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode26">
+    <void property="methods">
+     <void property="text">
+      <string>loadProgram(aProgram, aMemory, anAsignation)</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>BestFit</string>
@@ -960,21 +1053,28 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double26">
           <void method="setLocation">
-           <double>1605.9211886391417</double>
-           <double>749.4111620287141</double>
+           <double>1618.9211886391417</double>
+           <double>640.4111620287141</double>
           </void>
          </object>
-         <double>749.4111620287141</double>
+         <double>640.4111620287141</double>
         </void>
        </void>
       </object>
-      <double>1605.9211886391417</double>
+      <double>1618.9211886391417</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode27">
+    <void property="methods">
+     <void property="text">
+      <string>contextSwitch()
+contextSwitchIO()
+timeout()</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>IRQHandler</string>
@@ -991,21 +1091,26 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double27">
           <void method="setLocation">
-           <double>534.9229004488449</double>
-           <double>709.1872022238422</double>
+           <double>448.92290044884487</double>
+           <double>792.1872022238422</double>
           </void>
          </object>
-         <double>709.1872022238422</double>
+         <double>792.1872022238422</double>
         </void>
        </void>
       </object>
-      <double>534.9229004488449</double>
+      <double>448.92290044884487</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode28">
+    <void property="methods">
+     <void property="text">
+      <string>loadProgram(aProgram)</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
       <string>Asignation</string>
@@ -1022,15 +1127,15 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double28">
           <void method="setLocation">
-           <double>1348.4249482671094</double>
-           <double>451.5117285890078</double>
+           <double>1173.4249482671094</double>
+           <double>294.5117285890078</double>
           </void>
          </object>
-         <double>451.5117285890078</double>
+         <double>294.5117285890078</double>
         </void>
        </void>
       </object>
-      <double>1348.4249482671094</double>
+      <double>1173.4249482671094</double>
      </void>
     </void>
    </object>
@@ -1053,24 +1158,39 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double29">
           <void method="setLocation">
-           <double>1151.6559497151118</double>
-           <double>781.1795877050505</double>
+           <double>1051.6559497151118</double>
+           <double>655.1795877050505</double>
           </void>
          </object>
-         <double>781.1795877050505</double>
+         <double>655.1795877050505</double>
         </void>
        </void>
       </object>
-      <double>1151.6559497151118</double>
+      <double>1051.6559497151118</double>
      </void>
     </void>
    </object>
   </void>
   <void method="addNode">
    <object class="com.horstmann.violet.ClassNode" id="ClassNode30">
+    <void property="attributes">
+     <void property="text">
+      <string>size
+memory</string>
+     </void>
+    </void>
+    <void property="methods">
+     <void property="text">
+      <string>loadProgram(aProgram, aBlock)
+getInstruction(aPCB)
+getSize()
+
+</string>
+     </void>
+    </void>
     <void property="name">
      <void property="text">
-      <string>LogicMemory</string>
+      <string>Memory</string>
      </void>
     </void>
    </object>
@@ -1084,46 +1204,15 @@ loadProgram(aMemory, aProgram, anID)</string>
         <void method="set">
          <object idref="Point2D$Double30">
           <void method="setLocation">
-           <double>1151.2059368203709</double>
-           <double>862.2706779726058</double>
+           <double>1411.0</double>
+           <double>276.0</double>
           </void>
          </object>
-         <double>862.2706779726058</double>
+         <double>276.0</double>
         </void>
        </void>
       </object>
-      <double>1151.2059368203709</double>
-     </void>
-    </void>
-   </object>
-  </void>
-  <void method="addNode">
-   <object class="com.horstmann.violet.ClassNode" id="ClassNode31">
-    <void property="name">
-     <void property="text">
-      <string>Memory</string>
-     </void>
-    </void>
-   </object>
-   <object class="java.awt.geom.Point2D$Double" id="Point2D$Double31">
-    <void class="java.awt.geom.Point2D$Double" method="getField">
-     <string>x</string>
-     <void method="set">
-      <object idref="Point2D$Double31">
-       <void class="java.awt.geom.Point2D$Double" method="getField">
-        <string>y</string>
-        <void method="set">
-         <object idref="Point2D$Double31">
-          <void method="setLocation">
-           <double>1549.0</double>
-           <double>449.0</double>
-          </void>
-         </object>
-         <double>449.0</double>
-        </void>
-       </void>
-      </object>
-      <double>1549.0</double>
+      <double>1411.0</double>
      </void>
     </void>
    </object>
@@ -1283,21 +1372,6 @@ loadProgram(aMemory, aProgram, anID)</string>
     <void property="bentStyle">
      <object class="com.horstmann.violet.BentStyle" field="VHV"/>
     </void>
-    <void property="middleLabel">
-     <string>programs</string>
-    </void>
-    <void property="startArrowHead">
-     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
-    </void>
-   </object>
-   <object idref="ClassNode1"/>
-   <object idref="ClassNode11"/>
-  </void>
-  <void method="connect">
-   <object class="com.horstmann.violet.ClassRelationshipEdge">
-    <void property="bentStyle">
-     <object class="com.horstmann.violet.BentStyle" field="VHV"/>
-    </void>
     <void property="endArrowHead">
      <object class="com.horstmann.violet.ArrowHead" field="TRIANGLE"/>
     </void>
@@ -1346,6 +1420,9 @@ loadProgram(aMemory, aProgram, anID)</string>
     <void property="startArrowHead">
      <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
     </void>
+    <void property="startLabel">
+     <string>resourcesManager</string>
+    </void>
    </object>
    <object idref="ClassNode22"/>
    <object idref="ClassNode1"/>
@@ -1354,6 +1431,9 @@ loadProgram(aMemory, aProgram, anID)</string>
    <object class="com.horstmann.violet.ClassRelationshipEdge">
     <void property="bentStyle">
      <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+    </void>
+    <void property="endArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
     </void>
     <void property="endLabel">
      <string>io</string>
@@ -1421,6 +1501,9 @@ loadProgram(aMemory, aProgram, anID)</string>
     <void property="bentStyle">
      <object class="com.horstmann.violet.BentStyle" field="HVH"/>
     </void>
+    <void property="endArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
+    </void>
     <void property="startArrowHead">
      <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
     </void>
@@ -1435,6 +1518,12 @@ loadProgram(aMemory, aProgram, anID)</string>
    <object class="com.horstmann.violet.ClassRelationshipEdge">
     <void property="bentStyle">
      <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+    </void>
+    <void property="endArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
+    </void>
+    <void property="endLabel">
+     <string>irq</string>
     </void>
     <void property="startArrowHead">
      <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
@@ -1451,11 +1540,11 @@ loadProgram(aMemory, aProgram, anID)</string>
     <void property="bentStyle">
      <object class="com.horstmann.violet.BentStyle" field="HVH"/>
     </void>
+    <void property="endLabel">
+     <string>asignation</string>
+    </void>
     <void property="startArrowHead">
      <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
-    </void>
-    <void property="startLabel">
-     <string>asignation</string>
     </void>
    </object>
    <object idref="ClassNode1"/>
@@ -1501,21 +1590,6 @@ loadProgram(aMemory, aProgram, anID)</string>
    <object idref="ClassNode29"/>
   </void>
   <void method="connect">
-   <object class="com.horstmann.violet.ClassRelationshipEdge">
-    <void property="bentStyle">
-     <object class="com.horstmann.violet.BentStyle" field="HVH"/>
-    </void>
-    <void property="middleLabel">
-     <string>logicMemory</string>
-    </void>
-    <void property="startArrowHead">
-     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
-    </void>
-   </object>
-   <object idref="ClassNode19"/>
-   <object idref="ClassNode30"/>
-  </void>
-  <void method="connect">
    <object class="com.horstmann.violet.NoteEdge"/>
    <object idref="ClassNode20"/>
    <object idref="ClassNode20"/>
@@ -1552,8 +1626,14 @@ loadProgram(aMemory, aProgram, anID)</string>
     <void property="endArrowHead">
      <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
     </void>
+    <void property="endLabel">
+     <string>irq</string>
+    </void>
     <void property="startArrowHead">
      <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
+    </void>
+    <void property="startLabel">
+     <string>kernel</string>
     </void>
    </object>
    <object idref="ClassNode17"/>
@@ -1594,9 +1674,27 @@ loadProgram(aMemory, aProgram, anID)</string>
     <void property="startArrowHead">
      <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
     </void>
+    <void property="startLabel">
+     <string>aMemory</string>
+    </void>
    </object>
    <object idref="ClassNode28"/>
-   <object idref="ClassNode31"/>
+   <object idref="ClassNode30"/>
+  </void>
+  <void method="connect">
+   <object class="com.horstmann.violet.ClassRelationshipEdge">
+    <void property="bentStyle">
+     <object class="com.horstmann.violet.BentStyle" field="HVH"/>
+    </void>
+    <void property="middleLabel">
+     <string>programs *</string>
+    </void>
+    <void property="startArrowHead">
+     <object class="com.horstmann.violet.ArrowHead" field="DIAMOND"/>
+    </void>
+   </object>
+   <object idref="ClassNode21"/>
+   <object idref="ClassNode11"/>
   </void>
  </object>
 </java>
