@@ -1,7 +1,7 @@
 class IRQHandler():
     def __init__(self, irq):
         self.irq = irq
-        self.irq.setHandler(self)
+        self.irq.handler = self
 
     def contextSwitch(self):
         #Change to kernel, to kernel mode.
@@ -19,9 +19,9 @@ class IRQHandler():
         self.irq.kernel.changeKernelMode()
 
     def contextSwitchIO(self):
-        pcb = self.irq.io.currentProcess
-        self.kernel.scheduler.addProcess(pcb)
-        self.irq.io.reset()
+        pcb = self.irq.kernel.resourcesManager.io.currentPCB
+        self.irq.kernel.scheduler.addProcess(pcb)
+        self.irq.kernel.resourcesManager.io.reset()
 
     def timeout(self):
         self.contextSwitch()
@@ -35,5 +35,14 @@ class IRQ():
         self.kernel = aKernel
 
     def setHandler(self, anIRQHandler):
-        self.handler = anIRQHandler
+        self.handler = anIRQHandler()
+
+    def contextSwitch(self):
+        self.handler.contextSwitch()
+
+    def contextSwitchIO(self):
+        self.handler.contextSwitchIO()
+
+    def timeout(self):
+        self.handler.timeout()
 

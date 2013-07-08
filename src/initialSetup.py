@@ -15,16 +15,16 @@ import timer
 import mmu
 
 aScheduler = scheduler.Fifo()
-aMemory = memory.Memory(256)
+aMemory = memory.Memory(50)
 aFit = continousAsignation.FirstFit()
 anAsignation = continousAsignation.ContinousAsignation(aMemory, aFit)
 aMMU = mmu.MMU(anAsignation)
 anIRQ = irq.IRQ()
-anIRQHandler = irq.IRQHandler(irq)
-aCPU = cpu.(anIRQ)
-aTimer = timer.Timer(aCPU, 3)
-aClock = clock.Clock(aTimer)
+anIRQHandler = irq.IRQHandler(anIRQ)
 anIO = io.IO(anIRQ)
+aCPU = cpu.CPU(anIRQ)
+aTimer = timer.Timer(anIO, aCPU, 3)
+aClock = clock.Clock(aTimer)
 aResourcesManager = resourcesManager.ResourcesManager(anIO, aCPU, aMMU)
 aShell = shell.Shell()
 
@@ -33,7 +33,7 @@ aKernel = kernel.Kernel(aScheduler, anIRQ, aResourcesManager, aShell)
 program1 = programInstruction.Program()
 program2 = programInstruction.Program()
 program3 = programInstruction.Program()
-instruction1 = programInstruction.IOInstruction()
+instruccion1 = programInstruction.IOInstruction()
 instruccion2 = programInstruction.CPUInstruction()
 instruccion3 = programInstruction.EndInstruction()
 
@@ -58,7 +58,12 @@ program3.add(instruccion2)
 program3.add(instruccion1)
 program3.add(instruccion3)
 
-kernel.loadProgram(program1)
-kernel.loadProgram(program2)
-kernel.loadProgram(program3)
+aKernel.loadProgram(program1)
+aKernel.loadProgram(program2)
+aKernel.loadProgram(program3)
+
+#for x in aMemory.memory:
+#    print x
+
+aClock.run()
 

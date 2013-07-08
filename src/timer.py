@@ -3,7 +3,7 @@ class Timer():
     def __init__(self, anIO, aCPU, aQuantum):
         self.io = anIO
         self.cpu = aCPU
-        self.quantum = aQuantum):
+        self.quantum = aQuantum
         self.acc = 0
 
     def clock(self):

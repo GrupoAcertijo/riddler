@@ -16,5 +16,8 @@ class Memory():
 
     def getInstruction(self, aPCB):
         """aPCB must exist in the system"""
-            return self.memory.index(aPCB.getBase() + aPCB.getPc())
+        return self.memory[aPCB.getBase() + aPCB.getPc()]
+
+    def getSize(self):
+       return self.size
 

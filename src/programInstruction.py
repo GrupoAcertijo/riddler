@@ -30,7 +30,7 @@ class Instruction():
 
 class CPUInstruction(Instruction):
     def isIO(self):
-        return false
+        return False
 
     def execute(self):
         print "CPU Instruction"
@@ -38,14 +38,14 @@ class CPUInstruction(Instruction):
 class IOInstruction(Instruction):
 
     def isIO(self):
-        return true
+        return True
 
     def execute(self):
         print "IO Instruction"
 
 class EndInstruction(Instruction):
     def isIO(self):
-        return false
+        return False
 
     def execute(self):
         print "END Instruction"

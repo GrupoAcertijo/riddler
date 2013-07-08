@@ -7,9 +7,9 @@ class Shell():
         self.users = {} ##Users dictionary(key=user-name, value=object-user)
         self.currentUser = None #User who is using the shell,
                                 #      it is set at 'login'
-        self.validCommands = {'login': self.login, 
+        self.validCommands = {'login': self.login,
                               'logout': self.logout,
-                              'exit': self.exit, 
+                              'exit': self.exit,
                               'help': self.help,
                               'addUser': self.addUserShell,
                               'addAdmin': self.addAdminShell,
@@ -47,7 +47,7 @@ class Shell():
     def removeAdmin(self, userName):
         """Removes admin privilege to userName on the shell"""
         self.setAdmin(userName, False)
-    
+
     def removeAdminShell(self):
         """Gives follow steps for client of the shell"""
         if self.currentUser.isAdmin():
@@ -89,13 +89,13 @@ class Shell():
             rawI = input('Password: ')
             if rawI == user.pw:
                 self.currentUser = user
-            else: 
+            else:
                 logging.info("Incorrect password!")
                 self.login()
-        else: 
+        else:
             logging.info("User does not exist.")
             self.login()
-	      
+
     def logout(self):
         """Log out user, without any kind of check."""
         if self.currentUser is not None:
@@ -115,7 +115,7 @@ class Shell():
             user = self.getUser(userName)
             user.setAdmin(bool)
             self.updateUser(userName, user)
-        else: 
+        else:
             logging.info("Sorry, specified user does not exist.")
 
     def changeCurrentUserPW(self, oldPW, newPW):
@@ -131,7 +131,7 @@ class Shell():
         newPW = input("Please enter new password: ")
         if self.currentUser.pw == oldPW:
             self.changeCurrentUserPW(newPW)
-        else: 
+        else:
             logging.info("Passwords don't match!")
 
     def changeUserPW(self, userName, newPW):
@@ -152,9 +152,9 @@ class Shell():
                 self.changeUserPW(userName, newPW)
             else:
                 logging.info("Target user does not exist.")
-        else: 
+        else:
             logging.info("Sorry, you are not an admin!")
-        
+
 
     def existUser(self, userName):
         """Ask if a user is on users dictionary."""
@@ -178,7 +178,7 @@ class Shell():
         """Run while loop for input commands."""
         self.runCommand('login')
         while(True):
-            rawI = input('»')
+            rawI = input('>')
             self.runCommand(rawI)
 
     def runCommand(self, command):
@@ -200,7 +200,7 @@ class Shell():
         """Shows on client screen the list of validCommands"""
         for command in self.validCommands.keys():
             print (str(command))
- 
+
     def setKernel(self, kernel):
         self.kernel = kernel
 

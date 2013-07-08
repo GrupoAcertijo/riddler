@@ -5,7 +5,6 @@ class ResourcesManager():
         self.cpu = cpu
         self.memory = mmu
         self.cpu.resourcesManager = self
-        self.io.resourcesManager = self
 
     def getNextInstruction(self, aPCB):
         i = self.memory.asignation.memory.getInstruction(aPCB)
@@ -16,7 +15,7 @@ class ResourcesManager():
             return i
 
     def getIOInstruction(self, aPCB):
-        i = self.memory.asignation.memory.getInstruction(aPCB)
+        i = self.memory.getIntruction(aPCB)
         return i
 
     def loadProgram(self, aProgram):
