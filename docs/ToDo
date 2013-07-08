@@ -1,9 +1,5 @@
-Pagination => PagesTable -> Hash over fisic and logic memory.
+Finish Informe.......
 
-Fix shell -> add commands -> loadProgram(<aProgram>)
+irq timeOut, on timer. Changes irq.contextSwitch to irq.timeOut
 
-TEST!!!!
-
-Informe.......
-
-Fix UML
+Make Instructions double dispatch.. ..not only for io and cpu. Adds end method for irq, to load prompt shell again.

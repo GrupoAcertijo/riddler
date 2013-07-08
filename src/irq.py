@@ -23,7 +23,7 @@ class IRQHandler():
         self.irq.kernel.scheduler.addProcess(pcb)
         self.irq.kernel.resourcesManager.io.reset()
 
-    def timeout(self):
+    def timeOut(self):
         self.contextSwitch()
 
 class IRQ():
@@ -44,5 +44,5 @@ class IRQ():
         self.handler.contextSwitchIO()
 
     def timeout(self):
-        self.handler.timeout()
+        self.handler.timeOut()
 
