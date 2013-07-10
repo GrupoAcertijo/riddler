@@ -8,7 +8,7 @@ class IRQHandler():
         self.irq.kernel.changeKernelMode()
 
         #Get current process from cpu, added to the scheduler rpq.
-        current = self.irq.kernel.resourcesManager.cpu.getCurrentProcess()
+        current = self.irq.kernel.cpu.getCurrentProcess()
         self.irq.kernel.scheduler.addProcess(current)
 
         #Ask for next process to the scheduler
@@ -19,7 +19,7 @@ class IRQHandler():
         self.irq.kernel.changeKernelMode()
 
     def contextSwitchIO(self):
-    #No debería pasar el kernel a modo kernel?
+    #No deberia pasar el kernel a modo kernel?
         pcb = self.irq.kernel.cpu.io.getCurrentPCB()
         self.irq.kernel.scheduler.addProcess(pcb)
         self.irq.kernel.cpu.io.reset()
@@ -27,10 +27,13 @@ class IRQHandler():
     def timeOut(self):
         self.contextSwitch()
 
-    #Faltaría que la asignación continua lance una interrupción
+    #Faltaria que la asignacion continua lance una interrupcion
     #de que necesita compactarse. Mientras eso sucede que el kernel
     #se pase a modo kernel.
 
+    def endInterruption(self):
+        self.irq.kernel.cpu.setCurrentProcess(None)
+        self.irq.kernel.shell.run() 
 
 class IRQ():
     def __init__(self):
@@ -41,7 +44,7 @@ class IRQ():
         self.kernel = aKernel
 
     def setHandler(self, anIRQHandler):
-        self.handler = anIRQHandler()
+        self.handler = anIRQHandler
 
     def contextSwitch(self):
         self.handler.contextSwitch()
