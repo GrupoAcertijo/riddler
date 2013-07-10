@@ -11,4 +11,4 @@ class Clock(threading.Thread):
         while(True):
             time.sleep(1)
             self.timer.clock()
-    
+
