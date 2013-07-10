@@ -34,6 +34,9 @@ class CPUInstruction(Instruction):
 
     def execute(self):
         print "CPU Instruction"
+ 
+    def determineDispatching(self, aCPU):
+        self.execute()
 
 class IOInstruction(Instruction):
 
@@ -43,10 +46,16 @@ class IOInstruction(Instruction):
     def execute(self):
         print "IO Instruction"
 
+    def determineDispatching(self, aCPU):
+        aCPU.dispatchToIOExecution(self)
+
 class EndInstruction(Instruction):
     def isIO(self):
         return False
 
     def execute(self):
         print "END Instruction"
+
+    def determineDispatching(self, aCPU):
+        aCPU.irq.endInterruption()
 

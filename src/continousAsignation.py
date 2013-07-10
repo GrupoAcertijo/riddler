@@ -49,6 +49,9 @@ class ContinousAsignation():
     def getAmountFillBlocks(self):
         return len(self.getFillBlocks())
 
+    def getNextInstruction(self, aPCB):
+        self.memory.getInstruction(aPCB)
+
 class AsignationFit:
     def loadProgram(self, aProgram, memory, asignation):
         pass
