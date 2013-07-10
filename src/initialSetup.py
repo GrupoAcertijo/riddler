@@ -8,7 +8,6 @@ import kernel
 import memory
 import pcb
 import programInstruction
-import resourcesManager
 import scheduler
 import shell
 import timer
@@ -35,16 +34,14 @@ anIRQ = irq.IRQ()
 anIRQHandler = irq.IRQHandler(anIRQ)
 logging.info('=======IRQ set [OK]')
 anIO = io.IO(anIRQ)
-aCPU = cpu.CPU(anIRQ)
+aCPU = cpu.CPU(anIRQ, anIO)
 logging.info('=======IO & CPU founded [OK]')
 aTimer = timer.Timer(anIO, aCPU, 3)
 aClock = clock.Clock(aTimer)
-aResourcesManager = resourcesManager.ResourcesManager(anIO, aCPU, aMMU)
-logging.info('=======Resources Manager creation [OK]')
 aShell = shell.Shell()
 logging.info('=======Shell interface load [OK]')
 
-aKernel = kernel.Kernel(aScheduler, anIRQ, aResourcesManager, aShell)
+aKernel = kernel.Kernel(aScheduler, anIRQ, aShell, aCPU, aMMU)
 logging.info('=======Kernel load [OK]')
 
 program1 = programInstruction.Program()

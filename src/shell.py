@@ -230,4 +230,3 @@ class User:
     def setAdmin(self, bool):
         self.admin = bool
 
-

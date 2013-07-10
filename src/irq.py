@@ -1,7 +1,7 @@
 class IRQHandler():
     def __init__(self, irq):
         self.irq = irq
-        self.irq.handler = self
+        self.irq.setHandler(self)
 
     def contextSwitch(self):
         #Change to kernel, to kernel mode.
@@ -13,18 +13,24 @@ class IRQHandler():
 
         #Ask for next process to the scheduler
         newProcess = self.irq.kernel.scheduler.getProcess()
-        self.irq.kernel.resourcesManager.cpu.setCurrentProcess(newProcess)
+        self.irq.kernel.cpu.setCurrentProcess(newProcess)
 
         #Change kernel, to user mode again.
         self.irq.kernel.changeKernelMode()
 
     def contextSwitchIO(self):
-        pcb = self.irq.kernel.resourcesManager.io.currentPCB
+    #No debería pasar el kernel a modo kernel?
+        pcb = self.irq.kernel.cpu.io.getCurrentPCB()
         self.irq.kernel.scheduler.addProcess(pcb)
-        self.irq.kernel.resourcesManager.io.reset()
+        self.irq.kernel.cpu.io.reset()
 
     def timeOut(self):
         self.contextSwitch()
+
+    #Faltaría que la asignación continua lance una interrupción
+    #de que necesita compactarse. Mientras eso sucede que el kernel
+    #se pase a modo kernel.
+
 
 class IRQ():
     def __init__(self):
