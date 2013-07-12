@@ -1,4 +1,5 @@
 class Memory():
+
     def __init__(self, aSize):
         self.size = aSize
         self.memory = []

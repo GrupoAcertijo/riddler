@@ -1,4 +1,5 @@
 class ContinousAsignation():
+
     def __init__(self, memory, asignationFit):
         self.memory = memory
         self.asignationFit = asignationFit
@@ -48,6 +49,9 @@ class ContinousAsignation():
 
     def getAmountFillBlocks(self):
         return len(self.getFillBlocks())
+
+    def getNextInstruction(self, aPCB):
+        return self.memory.getInstruction(aPCB)
 
 class AsignationFit:
     def loadProgram(self, aProgram, memory, asignation):
@@ -99,7 +103,6 @@ class NotEnoughMemoryException(Exception):
 class Block():
 
     def __init__(self, aBase, aSize):
-
         self.base = aBase
         self.size = aSize
 

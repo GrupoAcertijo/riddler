@@ -1,4 +1,5 @@
 class PCB():
+
     def __init__(self, aPid, aBase, aSize):
         self.pid = aPid
         self.pc = 0
@@ -28,6 +29,7 @@ class PCB():
         return (self.pc < aSize) and (self.pc != aSize)
 
 class PCBPriority(PCB):
+
     def __init__(self, aPid, aBase, aPriority):
         PCB.__init__(self, aPid, aBase)
         self.priority = aPriority

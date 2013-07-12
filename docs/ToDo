@@ -1,5 +1,0 @@
-Finish Informe.......
-
-irq timeOut, on timer. Changes irq.contextSwitch to irq.timeOut
-
-Make Instructions double dispatch.. ..not only for io and cpu. Adds end method for irq, to load prompt shell again.
