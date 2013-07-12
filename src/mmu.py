@@ -1,4 +1,5 @@
 class MMU():
+
     def __init__(self, anAsignation):
         self.asignation = anAsignation
 

@@ -5,7 +5,6 @@ import Queue
 class Scheduler():
 
     """ This is an abstract class, with methods for all subclasses. """
-
     def getProcess(self):
         """ Returns the next process of the rpq """
         return self.rpq.get()

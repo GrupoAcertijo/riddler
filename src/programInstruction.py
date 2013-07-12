@@ -29,32 +29,25 @@ class Instruction():
         pass
 
 class CPUInstruction(Instruction):
-    def isIO(self):
-        return False
 
     def execute(self):
-        print "CPU Instruction"
+        print ("CPU Instruction")
  
     def determineDispatching(self, aCPU):
         self.execute()
 
 class IOInstruction(Instruction):
 
-    def isIO(self):
-        return True
-
     def execute(self):
-        print "IO Instruction"
+        print ("IO Instruction")
 
     def determineDispatching(self, aCPU):
-        aCPU.dispatchToIOExecution(self)
+        aCPU.dispatchToIOExecution()
 
 class EndInstruction(Instruction):
-    def isIO(self):
-        return False
 
     def execute(self):
-        print "END Instruction"
+        print ("END Instruction")
 
     def determineDispatching(self, aCPU):
         aCPU.irq.endInterruption()

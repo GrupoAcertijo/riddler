@@ -7,15 +7,12 @@ class CPU():
         self.mmu = aMMU
 
     def execute(self):
-    #This method needs to be modified with the next steps:
-    # if currentProcess not == None, ask mmu for nextInstruction
-    # if the instruction is a cpu one, execute it; if not sends it to IO
         """ Executes next instruction of current process """
         if self.currentProcess == None:
-            self.irq.contextSwitch()
-        elif self.currentProcess.hasNextInstruction(self.currentProcess.size):
+            self.irq.handler.firstProcess()
+        elif self.currentProcess.hasNextInstruction(self.currentProcess.getSize()):
             currentProcessPC = self.currentProcess.getPc()
-            instructionToExec = self.mmu.getNextInstruction(self.currentProcess)
+            instructionToExec = self.mmu.getNextInstruction(self.getCurrentProcess())
             if not instructionToExec == None:
                 self.dispatchToExecute(instructionToExec)
         else:
@@ -27,7 +24,7 @@ class CPU():
     def getCurrentProcess(self):
         return self.currentProcess
 
-    def dispatchToExecute(self, anIntruction):
+    def dispatchToExecute(self, anInstruction):
         anInstruction.determineDispatching(self)
    
     def dispatchToIOExecution(self):

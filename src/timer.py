@@ -13,5 +13,7 @@ class Timer():
             self.acc += 1
         else:
             self.cpu.irq.contextSwitch()
-            self.acc = 0
+
+    def setAcc(self, anAcc):
+        self.acc = anAcc
 

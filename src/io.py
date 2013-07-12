@@ -20,11 +20,6 @@ class IO():
             i = self.mmu.getNextInstruction(self.currentPCB)
             i.execute()
             self.currentPCB.incPc()
-           #Aca se podria hacer una comprobacion de si la proxima 
-           #instruccion tambien es de IO, para no hacer 
-           #un contextSwitching innecesario, o en su defecto varios...
-           #porque podria ocurrir que las 
-           #proximas 3 instrucciones sean de IO 
             self.irq.contextSwitchIO()
 
     def reset(self):
